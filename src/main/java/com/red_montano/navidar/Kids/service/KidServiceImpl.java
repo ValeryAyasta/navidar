@@ -24,14 +24,14 @@ public class KidServiceImpl implements IKidService {
     @Override
     public Kid markAssistance(Long kidId) {
         Kid kid = kidRepository.findById(kidId).orElseThrow(() -> new RuntimeException("Kid no encontrado"));
-        kid.setAssistance("SÍ");
+        kid.setAssistance("SI");
         return kidRepository.save(kid);
     }
 
     @Override
     public Kid markGift(Long kidId) {
         Kid kid = kidRepository.findById(kidId).orElseThrow(() -> new RuntimeException("Kid no encontrado"));
-        kid.setGift("SÍ");
+        kid.setGift("SI");
         return kidRepository.save(kid);
     }
 }

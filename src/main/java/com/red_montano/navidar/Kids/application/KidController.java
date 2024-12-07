@@ -1,5 +1,6 @@
 package com.red_montano.navidar.Kids.application;
 
+import com.red_montano.navidar.Kids.domain.dto.KidRequest;
 import com.red_montano.navidar.Kids.domain.entity.Kid;
 import com.red_montano.navidar.Kids.domain.service.IKidService;
 import org.springframework.http.ResponseEntity;
@@ -30,5 +31,15 @@ public class KidController {
     @PutMapping("/{id}/gift")
     public ResponseEntity<Kid> markGift(@PathVariable Long id) {
         return ResponseEntity.ok(kidService.markGift(id));
+    }
+
+    @PutMapping("/{id}/dismark")
+    public ResponseEntity<Kid> dismark(@PathVariable Long id){
+        return ResponseEntity.ok(kidService.dismark(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<Kid> createKid(@RequestBody KidRequest kidRequest){
+        return ResponseEntity.ok(kidService.createKid(kidRequest));
     }
 }

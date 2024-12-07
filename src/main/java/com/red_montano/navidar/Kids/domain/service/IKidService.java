@@ -1,5 +1,6 @@
 package com.red_montano.navidar.Kids.domain.service;
 
+import com.red_montano.navidar.Kids.domain.dto.KidRequest;
 import com.red_montano.navidar.Kids.domain.entity.Kid;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,8 @@ public interface IKidService {
     public abstract Kid markAssistance(Long kidId);
 
     public abstract Kid markGift(Long kidId);
+
+    public abstract Kid dismark(Long kidId);
+
+    public abstract Kid createKid(KidRequest kidRequest);
 }
